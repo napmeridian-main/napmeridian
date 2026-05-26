@@ -17,10 +17,6 @@
   --line: rgba(10, 20, 33, 0.10);
   --line-strong: rgba(10, 20, 33, 0.28);
 
-  --font-display: "Instrument Serif", "Times New Roman", serif;
-  --font-body: "Manrope", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
-
   --container: 1320px;
   --gutter: 28px;
   --radius-sm: 6px;
@@ -68,19 +64,6 @@
   --muted: #6f6f6f; --muted-2: #9b9b9b;
   --line: rgba(26, 26, 26, 0.10);
   --line-strong: rgba(26, 26, 26, 0.28);
-}
-
-[data-type="editorial"] {
-  --font-display: "Instrument Serif", serif;
-  --font-body: "Manrope", system-ui, sans-serif;
-}
-[data-type="modern"] {
-  --font-display: "Newsreader", serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
-}
-[data-type="classical"] {
-  --font-display: "Cormorant Garamond", serif;
-  --font-body: "Outfit", system-ui, sans-serif;
 }
 
 /* ============================================================
@@ -437,9 +420,9 @@ p { margin: 0 0 16px; text-wrap: pretty; }
   content: "";
   position: absolute; inset: 0;
   background: linear-gradient(180deg,
-    rgba(10,20,40,.55) 0%,
-    rgba(10,20,40,.25) 40%,
-    rgba(10,20,40,.75) 100%);
+    rgba(0,0,0,.70) 0%,
+    rgba(0,0,0,.50) 40%,
+    rgba(0,0,0,.85) 100%);
 }
 .hero .container { position: relative; z-index: 2; }
 
@@ -454,7 +437,7 @@ p { margin: 0 0 16px; text-wrap: pretty; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(56px, 9.4vw, 168px);
+  font-size: clamp(40px, 5.5vw, 96px);
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: -0.02em;
@@ -977,7 +960,7 @@ p { margin: 0 0 16px; text-wrap: pretty; }
   .page-hero-meta { gap: 20px; }
   .page-hero-meta .item .v { font-size: 20px; }
   .hero { min-height: 92vh; }
-  .hero-title { font-size: clamp(44px, 12vw, 96px); margin-bottom: 24px; }
+  .hero-title { font-size: clamp(32px, 9vw, 64px); margin-bottom: 24px; }
   .nav { padding: 12px 0; }
   .marquee-item { font-size: 40px; gap: 32px; }
   .marquee-track { gap: 32px; }
