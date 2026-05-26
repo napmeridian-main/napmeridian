@@ -542,7 +542,7 @@ p { margin: 0 0 16px; text-wrap: pretty; }
 .section-head p { color: var(--muted); max-width: 50ch; }
 
 /* ============================================================
-   Service grid
+   Service grid & carousel
    ============================================================ */
 .svc-grid {
   display: grid;
@@ -550,6 +550,26 @@ p { margin: 0 0 16px; text-wrap: pretty; }
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
+}
+
+/* Horizontal scroll carousel variant (used on homepage) */
+.svc-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 var(--gutter) 24px;
+}
+.svc-carousel::-webkit-scrollbar { display: none; }
+.svc-carousel .svc-cell {
+  min-width: clamp(260px, 28vw, 310px);
+  max-width: clamp(260px, 28vw, 310px);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
 }
 .svc-cell {
   background: var(--paper);
@@ -659,13 +679,12 @@ p { margin: 0 0 16px; text-wrap: pretty; }
 .process-step { padding: 0 16px 0 0; position: relative; }
 .process-step .step-marker {
   width: 72px; height: 72px; border-radius: 50%;
-  background: var(--paper); color: var(--ink);
+  background: transparent; color: var(--accent-soft);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display); font-size: 28px;
   margin-bottom: 24px; position: relative; z-index: 2;
-  border: 1px solid var(--paper);
+  border: 1.5px solid var(--accent);
 }
-.process-step:nth-child(2n) .step-marker { background: var(--accent); color: var(--ink); }
 .process-step h3 { color: var(--paper); font-size: 22px; margin-bottom: 10px; }
 .process-step p { color: rgba(255,255,255,.7); font-size: 14px; max-width: 22ch; }
 .process-step .step-label {
@@ -957,10 +976,14 @@ p { margin: 0 0 16px; text-wrap: pretty; }
   .svc-detail .svc-items { columns: 1; }
   .field-row { grid-template-columns: 1fr; }
   .page-hero { padding: 130px 0 60px; }
+  .page-hero h1 { font-size: clamp(38px, 10vw, 72px); }
   .page-hero-meta { gap: 20px; }
   .page-hero-meta .item .v { font-size: 20px; }
   .hero { min-height: 92vh; }
   .hero-title { font-size: clamp(32px, 9vw, 64px); margin-bottom: 24px; }
+  .hero-feature-card { display: none; }
+  .hero-subline { font-size: clamp(16px, 4.5vw, 20px); }
+  .hero-meta-row { padding-top: 14px; gap: 14px; }
   .nav { padding: 12px 0; }
   .marquee-item { font-size: 40px; gap: 32px; }
   .marquee-track { gap: 32px; }
@@ -968,9 +991,10 @@ p { margin: 0 0 16px; text-wrap: pretty; }
   .cta-band { padding: 72px 0; }
   .contact-aside { padding: 28px; }
   .about-pillars { grid-template-columns: 1fr; }
-  .tweaks-fab { right: 14px; bottom: 14px; }
-  .tweaks-panel { right: 14px; left: 14px; width: auto; }
   .fta-grid { grid-template-columns: repeat(2, 1fr); }
   .image-grid-3 { grid-template-columns: 1fr; grid-template-rows: repeat(3, 200px); }
   .image-grid-3 .tile.tall { grid-column: 1; }
+  .svc-carousel .svc-cell { min-width: 76vw; max-width: 76vw; }
+  .process-steps { gap: 24px 16px; }
+  .process-step .step-marker { width: 56px; height: 56px; font-size: 22px; }
 }

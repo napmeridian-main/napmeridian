@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="section">
+      <section className="section" style={{ paddingBottom: 0 }}>
         <div className="container">
           <div className="section-head">
             <div className="section-head-stack">
@@ -107,26 +107,26 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
 
-          <div className="svc-grid">
-            {[
-              { num: '01 / Setup', title: 'Business Setup & Registration', href: '/services#setup', desc: 'IEC · GST · RCMC · MSME/Udyam · DSC · AD Code · HS classification' },
-              { num: '02 / Compliance', title: 'DGFT & Government Compliance', href: '/services#dgft', desc: 'Licensing · Export schemes · RoDTEP/RoSCTL · EPCG · Advance Authorization · SCOMET' },
-              { num: '03 / Export', title: 'Export Documentation', href: '/services#export-docs', desc: 'Commercial invoice · Packing list · Bill of Lading / Airway Bill · Shipping Bill' },
-              { num: '04 / Origin', title: 'Certificate of Origin', href: '/services#origin', desc: 'Preferential CoO under FTA & CECA agreements · Non-preferential CoO issuance' },
-              { num: '05 / Banking', title: 'FEMA & Banking Compliance', href: '/services#fema', desc: 'Resolving EDPMS & IDPMS issues · Foreign exchange documentation support' },
-              { num: '06 / Incentives', title: 'Export Incentives & Subsidies', href: '/services#incentives', desc: 'Duty drawback claims · RoDTEP filing · IGST refund processing' },
-              { num: '07 / Import', title: 'Import Documentation & Advisory', href: '/services#import-docs', desc: 'Bill of Entry verification under duty exemption schemes · Customs & duty advisory' },
-              { num: '08 / Capability', title: 'Training & Support', href: '/services#training', desc: 'EXIM programs · Startup export guidance · SOP setup · Corporate EXIM training' },
-            ].map(({ num, title, href, desc }) => (
-              <Link key={href} className="svc-cell" href={href}>
-                <div className="svc-num">{num}</div>
-                <h3>{title}</h3>
-                <div className="svc-arrow">↗</div>
-                <div className="svc-desc">{desc}</div>
-              </Link>
-            ))}
-          </div>
+        <div className="svc-carousel">
+          {[
+            { num: '01 / Setup', title: 'Business Setup & Registration', href: '/services#setup', desc: 'IEC · GST · RCMC · MSME/Udyam · DSC · AD Code · HS classification' },
+            { num: '02 / Compliance', title: 'DGFT & Government Compliance', href: '/services#dgft', desc: 'Licensing · Export schemes · RoDTEP/RoSCTL · EPCG · Advance Authorization · SCOMET' },
+            { num: '03 / Export', title: 'Export Documentation', href: '/services#export-docs', desc: 'Commercial invoice · Packing list · Bill of Lading / Airway Bill · Shipping Bill' },
+            { num: '04 / Origin', title: 'Certificate of Origin', href: '/services#origin', desc: 'Preferential CoO under FTA & CECA agreements · Non-preferential CoO issuance' },
+            { num: '05 / Banking', title: 'FEMA & Banking Compliance', href: '/services#fema', desc: 'Resolving EDPMS & IDPMS issues · Foreign exchange documentation support' },
+            { num: '06 / Incentives', title: 'Export Incentives & Subsidies', href: '/services#incentives', desc: 'Duty drawback claims · RoDTEP filing · IGST refund processing' },
+            { num: '07 / Import', title: 'Import Documentation & Advisory', href: '/services#import-docs', desc: 'Bill of Entry verification under duty exemption schemes · Customs & duty advisory' },
+            { num: '08 / Capability', title: 'Training & Support', href: '/services#training', desc: 'EXIM programs · Startup export guidance · SOP setup · Corporate EXIM training' },
+          ].map(({ num, title, href, desc }) => (
+            <Link key={href} className="svc-cell" href={href}>
+              <div className="svc-num">{num}</div>
+              <h3>{title}</h3>
+              <div className="svc-arrow">↗</div>
+              <div className="svc-desc">{desc}</div>
+            </Link>
+          ))}
         </div>
       </section>
 
