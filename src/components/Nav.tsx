@@ -39,7 +39,7 @@ export default function Nav() {
         <div className="container nav-inner">
           <Link className="logo" href="/">
             <span className="logo-mark"><span className="dot" /></span>
-            <span className="name">NapMeridian<em> Exim</em></span>
+            <span className="name">NapMeridian</span>
           </Link>
           <nav>
             <ul className="nav-links">

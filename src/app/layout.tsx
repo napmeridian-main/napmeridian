@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
-import { Newsreader, DM_Sans, JetBrains_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
-const newsreader = Newsreader({
-  weight: ['400'],
+const plusJakarta = Plus_Jakarta_Sans({
+  weight: ['400', '500', '600', '700', '800'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
-  weight: ['400', '500', '600', '700'],
+const inter = Inter({
+  weight: ['400', '500', '600'],
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const fontVars = [newsreader.variable, dmSans.variable, jetbrainsMono.variable].join(' ');
+  const fontVars = [plusJakarta.variable, inter.variable, jetbrainsMono.variable].join(' ');
 
   return (
     <html lang="en" data-palette="azure" className={fontVars}>
