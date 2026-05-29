@@ -38,7 +38,7 @@ export default function Nav() {
       <header className={navClass}>
         <div className="container nav-inner">
           <Link className="logo" href="/">
-            <span className="logo-mark"><span className="dot" /></span>
+            <span className="logo-mark">N</span>
             <span className="name">NapMeridian</span>
           </Link>
           <nav>
@@ -57,16 +57,16 @@ export default function Nav() {
             </ul>
           </nav>
           <div className="nav-cta">
-            <Link className="btn btn-ghost" href="/services">Our Services</Link>
+            <Link className="btn btn-ghost" href="/services">Services</Link>
             <Link className="btn btn-primary" href="/contact">
-              Book a consultation <span className="arrow">→</span>
+              Free consultation
             </Link>
             <button
               className="menu-btn"
               aria-label="Open menu"
               onClick={() => setMenuOpen(true)}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <path d="M4 7h16M4 12h16M4 17h16" />
               </svg>
             </button>

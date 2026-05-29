@@ -138,10 +138,9 @@ export default function Services() {
             Eight practice areas, four-plus dozen line-items, one consultancy. Browse what we do — or jump straight to the area you need.
           </p>
           <div className="page-hero-meta">
-            <div className="item"><span className="k">Practice areas</span><span className="v">08</span></div>
-            <div className="item"><span className="k">Median turnaround</span><span className="v">2 days</span></div>
-            <div className="item"><span className="k">First-time approval</span><span className="v">98%</span></div>
-            <div className="item"><span className="k">Engagement model</span><span className="v">Project &amp; retainer</span></div>
+            <div className="item"><div className="k">Practice areas</div><div className="v">8</div></div>
+            <div className="item"><div className="k">Median turnaround</div><div className="v">2 days</div></div>
+            <div className="item"><div className="k">First-time approval</div><div className="v">98%</div></div>
           </div>
           <nav style={{ marginTop: '48px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             {['setup', 'dgft', 'export-docs', 'origin', 'fema', 'incentives', 'import-docs', 'training'].map((id, i) => (
@@ -153,36 +152,21 @@ export default function Services() {
         </div>
       </section>
 
-      {/* IMAGE STRIP */}
-      <section
-        className="image-strip"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?w=2400&q=80&auto=format&fit=crop')" }}
-      >
-        <div className="container">
-          <span className="eyebrow">In-house team</span>
-          <h2 style={{ fontSize: 'clamp(40px,5.5vw,84px)', marginTop: '14px' }}>
-            Eight practice areas.<br /><em>One accountable team.</em>
-          </h2>
-        </div>
-      </section>
-
       {/* SERVICES DETAIL */}
       <section className="section">
         <div className="container">
           {services.map((svc) => (
             <article key={svc.id} className="svc-detail" id={svc.id}>
-              <div className="svc-meta">
+              <div>
                 <div className="num">{svc.num}</div>
                 <h3>{svc.title}</h3>
-                <p className="svc-blurb">{svc.blurb}</p>
+                <p className="sd-blurb">{svc.blurb}</p>
               </div>
               <ul className="svc-items">
                 {svc.items.map(({ name, extra }) => (
                   <li key={name}>
-                    <div>
-                      <strong>{name}</strong>
-                      <span className="extra">{extra}</span>
-                    </div>
+                    <b>{name}</b>
+                    <span>{extra}</span>
                   </li>
                 ))}
               </ul>
@@ -223,40 +207,36 @@ export default function Services() {
                 Discuss your engagement <span className="arrow">→</span>
               </Link>
             </div>
-            <div
-              className="photo tall"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80&auto=format&fit=crop')" }}
-            >
-              <span className="tag">Consulting · Pan-India</span>
+            <div className="fs-media">
+              <img
+                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80&auto=format&fit=crop"
+                alt="Consultancy team at work"
+              />
+              <span className="fs-caption"><span className="dot" />Consulting · Pan-India</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* PROCESS */}
-      <section className="section process">
+      <section className="section bg-soft">
         <div className="container">
           <div className="section-head">
-            <div className="section-head-stack">
-              <span className="eyebrow">How an engagement runs</span>
-              <h2>From <em>&ldquo;interested&rdquo;</em> to your first incentive credit.</h2>
-            </div>
-            <div>
-              <p>A clear five-step sequence. You always know what&apos;s happening, what&apos;s next, and what you need to provide.</p>
-            </div>
+            <span className="eyebrow">How an engagement runs</span>
+            <h2 style={{ marginTop: '14px' }}>From first call to your first incentive credit.</h2>
+            <p className="lede">A clear sequence. You always know what&apos;s happening and what&apos;s next.</p>
           </div>
-          <div className="process-steps">
+          <div className="steps">
             {[
-              { n: '01', title: 'Consultation', desc: '30-minute call. Understand your product, your buyers, your timeline.' },
-              { n: '02', title: 'Documentation', desc: 'Registrations, licences and compliance set up against a written scope.' },
-              { n: '03', title: 'Buyer Support', desc: 'Buyer matchmaking, market research, RFQ support if needed.' },
-              { n: '04', title: 'Shipment Execution', desc: 'Coordinated logistics, customs, banking. We sit on the calls with the CHA.' },
-              { n: '05', title: 'Post-Shipment', desc: 'BRC closure, incentive filing, payment follow-up to credit.' },
-            ].map(({ n, title, desc }, i) => (
-              <div key={n} className="process-step">
-                <div className="step-marker">{n}</div>
-                <div className="step-label">Step {['One','Two','Three','Four','Five'][i]}</div>
-                <h3>{title}</h3>
+              { n: '1', title: 'Consultation', desc: '30-minute call. Understand your product, buyers and timeline.' },
+              { n: '2', title: 'Documentation', desc: 'Registrations and compliance set up against a written scope.' },
+              { n: '3', title: 'Buyer Support', desc: 'Market research and buyer connections where needed.' },
+              { n: '4', title: 'Shipment', desc: 'Coordinated logistics, customs and banking.' },
+              { n: '5', title: 'Post-Shipment', desc: 'BRC closure, incentive filing, payment follow-up to credit.' },
+            ].map(({ n, title, desc }) => (
+              <div key={n} className="step">
+                <div className="n">{n}</div>
+                <h4>{title}</h4>
                 <p>{desc}</p>
               </div>
             ))}

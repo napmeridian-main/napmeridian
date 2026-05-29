@@ -94,10 +94,9 @@ export default function Industries() {
             Each industry has its own HS codes, its own FTA quirks, its own buyer expectations. We staff our team accordingly — so when you call, you reach someone who&apos;s already shipped your category.
           </p>
           <div className="page-hero-meta">
-            <div className="item"><span className="k">Sectors</span><span className="v">09</span></div>
-            <div className="item"><span className="k">FTAs handled</span><span className="v">18</span></div>
-            <div className="item"><span className="k">Active clients</span><span className="v">120+</span></div>
-            <div className="item"><span className="k">Export markets</span><span className="v">40+ countries</span></div>
+            <div className="item"><div className="k">Sectors</div><div className="v">9</div></div>
+            <div className="item"><div className="k">Trade agreements</div><div className="v">18</div></div>
+            <div className="item"><div className="k">Export markets</div><div className="v">40+</div></div>
           </div>
         </div>
       </section>
@@ -109,9 +108,10 @@ export default function Industries() {
             {industries.map(({ n, title, img, desc }) => (
               <div key={n} className="ind-card">
                 <div className="ind-photo" style={{ backgroundImage: `url('${img}')` }} />
-                <div className="ind-num">{n} — Sector</div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
+                <div className="ind-body">
+                  <h3>{title}</h3>
+                  <p>{desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -129,19 +129,11 @@ export default function Industries() {
       <section className="section-tight" style={{ background: 'var(--paper-2)', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}>
         <div className="container">
           <div className="section-head">
-            <div className="section-head-stack">
-              <span className="eyebrow">Where Indian exporters ship to</span>
-              <h2>
-                40+ markets,{' '}
-                <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>eighteen</em>{' '}
-                trade agreements.
-              </h2>
-            </div>
-            <div>
-              <p>
-                We file Certificates of Origin under every FTA and CECA India is currently signatory to, and maintain up-to-date rules-of-origin tables for each.
-              </p>
-            </div>
+            <span className="eyebrow">Where Indian exporters ship to</span>
+            <h2 style={{ marginTop: '14px' }}>18 trade agreements, 40+ markets.</h2>
+            <p className="lede">
+              We file Certificates of Origin under every FTA and CECA India is currently signatory to.
+            </p>
           </div>
 
           <div className="fta-grid">
